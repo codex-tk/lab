@@ -1,0 +1,24 @@
+application:
+  version: '0.1'
+  flask:
+    SECRET_KEY: 'secret_key'
+    DEBUG: False
+
+profiles:
+  active: 'dev'
+
+  dev:
+    flask:
+      DEBUG: True
+      SQLALCHEMY_DATABASE_URI: ''
+      SQLALCHEMY_TRACK_MODIFICATIONS: False
+
+  prod:
+    flask:
+      SQLALCHEMY_DATABASE_URI: ''
+
+  test:
+    flask:
+      DEBUG: True
+      SQLALCHEMY_DATABASE_URI: ''
+      TESTING: True
