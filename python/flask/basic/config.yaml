@@ -10,15 +10,15 @@ profiles:
   dev:
     flask:
       DEBUG: True
-      SQLALCHEMY_DATABASE_URI: ''
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
       SQLALCHEMY_TRACK_MODIFICATIONS: False
 
   prod:
     flask:
-      SQLALCHEMY_DATABASE_URI: ''
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
 
   test:
     flask:
       DEBUG: True
-      SQLALCHEMY_DATABASE_URI: ''
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
       TESTING: True
