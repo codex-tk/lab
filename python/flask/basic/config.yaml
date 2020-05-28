@@ -1,11 +1,11 @@
-application:
-  version: '0.1'
-  flask:
-    SECRET_KEY: 'secret_key'
-    DEBUG: False
-
 profiles:
   active: 'dev'
+
+  common:
+    version: 0.1
+    flask:
+      SECRET_KEY: 'secret_key'
+      DEBUG: False
 
   dev:
     flask:

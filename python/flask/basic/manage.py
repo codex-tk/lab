@@ -1,26 +1,26 @@
 import os
 import unittest
 
-from app.main import create_context, db
-from app.main.context import Context
-
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
+from app.main import create_app
+from app.main.model import db
 from app.main.model.user import User
 
-ctx = create_context('./config.yaml')
 
-ctx.app.app_context().push()
+app = create_app('./config.yaml')
 
-manager = Manager(ctx.app)
-migrate = Migrate(ctx.app, db)
+app.app_context().push()
+
+manager = Manager(app)
+migrate = Migrate(app, db)
 
 manager.add_command('db', MigrateCommand)
 
 @manager.command
 def run():
-    ctx.app.run()
+    app.run()
 
 
 @manager.command

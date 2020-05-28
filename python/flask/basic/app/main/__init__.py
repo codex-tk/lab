@@ -1,20 +1,21 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-from flask_sqlalchemy import SQLAlchemy
 
-from .context import Context
-
-db = SQLAlchemy()
-bcrypt = Bcrypt()
+from .config import Config
+from .model import db, bcrypt
 
 
-def create_context(config_yaml_file):
-    ctx = Context(config_yaml_file)
-    db.init_app(ctx.app)
-    bcrypt.init_app(ctx.app)
-    return ctx
+def create_app(config_yaml_file):
+    usercfg = Config(config_yaml_file)
+    app = Flask(__name__)
 
+    for key in usercfg.flask:
+        app.config[key] = usercfg.flask[key]
 
+    setattr(app, 'usercfg', usercfg)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+    
+    return app
 
 
