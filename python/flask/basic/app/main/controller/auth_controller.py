@@ -22,6 +22,7 @@ class AuthLogout(Resource):
 
     @AuthNs.impl.doc('auth logout')
     def post(self):
+        print(request.headers)
         auth_token = request.headers.get('Authorization').strip()
         return logout_user(auth_token)
 
