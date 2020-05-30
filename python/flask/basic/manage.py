@@ -4,19 +4,19 @@ import unittest
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
-from app.main import create_app
+from app import create_app
 from app.main.model import db
-from app.main.model.user import User
-
+from app.main import main_bp
 
 app = create_app('./config.yaml')
-
+app.register_blueprint(main_bp)
 app.app_context().push()
 
 manager = Manager(app)
 migrate = Migrate(app, db)
 
 manager.add_command('db', MigrateCommand)
+
 
 @manager.command
 def run():
@@ -31,5 +31,7 @@ def test():
         return 0
     return 1
 
+
 if __name__ == '__main__':
+    print(os.getcwd())
     manager.run()

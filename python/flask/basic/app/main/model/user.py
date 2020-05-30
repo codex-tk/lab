@@ -13,6 +13,7 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
 
+
     @property
     def password(self):
         raise AttributeError('password: write only field')

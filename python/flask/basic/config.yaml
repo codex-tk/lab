@@ -3,6 +3,7 @@ profiles:
 
   common:
     version: 0.1
+    sqlite_uri_use_basedir: True
     flask:
       SECRET_KEY: 'secret_key'
       DEBUG: False
@@ -10,15 +11,15 @@ profiles:
   dev:
     flask:
       DEBUG: True
-      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///boilerplate_main.db'
       SQLALCHEMY_TRACK_MODIFICATIONS: False
 
   prod:
     flask:
-      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///boilerplate_main.db'
 
   test:
     flask:
       DEBUG: True
-      SQLALCHEMY_DATABASE_URI: 'sqlite:///./boilerplate_main.db'
+      SQLALCHEMY_DATABASE_URI: 'sqlite:///boilerplate_main.db'
       TESTING: True

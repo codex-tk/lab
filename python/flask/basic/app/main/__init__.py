@@ -1,21 +1,15 @@
-from flask import Flask
+# main/__init__.py
 
-from .config import Config
-from .model import db, bcrypt
+from flask_restplus import Api
+from flask import Blueprint
+from .namespaces import UserNs
+from .controller import user_controller
 
 
-def create_app(config_yaml_file):
-    usercfg = Config(config_yaml_file)
-    app = Flask(__name__)
-
-    for key in usercfg.flask:
-        app.config[key] = usercfg.flask[key]
-
-    setattr(app, 'usercfg', usercfg)
-
-    db.init_app(app)
-    bcrypt.init_app(app)
-    
-    return app
-
+main_bp = Blueprint('main', __name__)
+api = Api(main_bp,
+          title='flask restplus boilerpalte',
+          version='0.1',
+          description='flask restplus')
+api.add_namespace(UserNs.impl, path='/user')
 
