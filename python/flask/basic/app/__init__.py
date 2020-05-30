@@ -17,6 +17,7 @@ def create_app(config_yaml_file):
     if usercfg.sqlite_uri_use_basedir and app.config['SQLALCHEMY_DATABASE_URI'].startswith('sqlite'):
         db_uri = app.config['SQLALCHEMY_DATABASE_URI']
         real_target = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                                   '..',
                                    db_uri[db_uri.rindex('/') + 1:]).replace('\\', '/')
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + real_target
 
