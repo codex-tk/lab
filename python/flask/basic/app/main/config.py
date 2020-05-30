@@ -30,5 +30,4 @@ class Config(object):
 
 if __name__ == '__main__':
     cfg = Config('./config.yaml')
-    #print(cfg.__dict__)
-    
+    print(cfg.__dict__)

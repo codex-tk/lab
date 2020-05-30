@@ -6,6 +6,8 @@ from .main.model import db, bcrypt
 
 import os
 
+secret_key = None
+
 
 def create_app(config_yaml_file):
     usercfg = Config(config_yaml_file)
@@ -27,3 +29,5 @@ def create_app(config_yaml_file):
     bcrypt.init_app(app)
 
     return app
+
+

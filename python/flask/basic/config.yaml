@@ -4,6 +4,9 @@ profiles:
   common:
     version: 0.1
     sqlite_uri_use_basedir: True
+    logging:
+      level: 'DEBUG'
+      format: ''
     flask:
       SECRET_KEY: 'secret_key'
       DEBUG: False

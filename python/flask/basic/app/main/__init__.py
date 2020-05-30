@@ -6,8 +6,8 @@ from .namespaces import UserNs
 from .controller import user_controller
 
 
-main_bp = Blueprint('main', __name__)
-api = Api(main_bp,
+blueprint = Blueprint('api', __name__)
+api = Api(blueprint,
           title='flask restplus boilerpalte',
           version='0.1',
           description='flask restplus')
