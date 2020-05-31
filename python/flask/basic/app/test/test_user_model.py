@@ -21,7 +21,7 @@ class TestUserModel(BaseTestCase):
 
     def test_decode_auth_token(self):
         user = User(
-            email='test@test.com',
+            email='test0@test.com',
             password='test',
             registered_on=datetime.datetime.utcnow()
         )
