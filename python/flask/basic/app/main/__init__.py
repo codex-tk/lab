@@ -1,6 +1,6 @@
 # main/__init__.py
 
-from flask_restplus import Api
+from flask_restx import Api
 from flask import Blueprint
 from .namespaces import UserNs, AuthNs
 from .controller import user_controller, auth_controller

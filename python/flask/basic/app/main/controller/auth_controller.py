@@ -1,5 +1,5 @@
 from flask import request
-from flask_restplus import Resource
+from flask_restx import Resource
 
 from app.main.service.auth_service import login_user, logout_user
 from app.main.namespaces import AuthNs
