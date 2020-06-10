@@ -40,3 +40,5 @@ migrations
 .vscode/
 
 log/
+
+target
