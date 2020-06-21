@@ -5,6 +5,12 @@ mod conditions;
 mod borrow;
 mod slices;
 mod structs;
+mod enums;
+mod vec;
+mod strings;
+mod hash_map;
+mod errors;
+mod generics;
 
 fn main() {
      /*
@@ -15,6 +21,14 @@ fn main() {
      condition_main();
      borrow::borrow_main();
      slices::slices_main();
-     */
      structs::structs_main();
+     structs::rectangles_main();
+     enums::enums_main();
+     vec::vec_main();
+     strings::strings_main();
+     hash_map::hash_map_main();
+     errors::error_main();
+     */
+     generics::generics_main();
+     
 }

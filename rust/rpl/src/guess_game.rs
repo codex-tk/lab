@@ -38,5 +38,4 @@ pub fn guess_game() {
             }
         }
     }
-
 }
