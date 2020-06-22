@@ -11,6 +11,9 @@ mod strings;
 mod hash_map;
 mod errors;
 mod generics;
+mod closures;
+mod iterators;
+mod smart_ptrs;
 
 fn main() {
      /*
@@ -28,7 +31,9 @@ fn main() {
      strings::strings_main();
      hash_map::hash_map_main();
      errors::error_main();
-     */
      generics::generics_main();
-     
+     closures::main();
+     iterators::main();
+     */
+     smart_ptrs::main();
 }
