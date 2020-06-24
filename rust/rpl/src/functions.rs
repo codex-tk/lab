@@ -14,3 +14,7 @@ pub fn functions(){
 pub fn function_with(x: i32){
     println!("function {}", x);
 }
+
+fn return_closure() -> impl Fn(i32) -> i32 {
+    |x| x + 1
+}
