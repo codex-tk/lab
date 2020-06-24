@@ -14,7 +14,11 @@ mod generics;
 mod closures;
 mod iterators;
 mod smart_ptrs;
+<<<<<<< HEAD
 mod webserver;
+=======
+mod threads;
+>>>>>>> thread
 
 fn main() {
      /*
@@ -37,6 +41,7 @@ fn main() {
      iterators::main();
 
      smart_ptrs::main();
+     threads::main();
      */
      webserver::main();
 }
