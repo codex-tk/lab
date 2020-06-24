@@ -14,6 +14,7 @@ mod generics;
 mod closures;
 mod iterators;
 mod smart_ptrs;
+mod threads;
 
 fn main() {
      /*
@@ -34,6 +35,7 @@ fn main() {
      generics::generics_main();
      closures::main();
      iterators::main();
-     */
      smart_ptrs::main();
+     */
+     threads::main();
 }
